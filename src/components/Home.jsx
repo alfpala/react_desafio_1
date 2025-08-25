@@ -1,10 +1,16 @@
-import Header from './Header'
-import CardPizza from './CardPizza'
+import "../assets/css/Home.css";
+import Header from './Header';
+import CardPizza from './CardPizza';
 
-const Home = () => {
+const Home = ({ user }) => {
   return (
     <main>
       <Header />
+      <div className="home-container">
+        <h2>Bienvenido a Mamma Mía 🍕</h2>
+        <p>Has iniciado sesión como: <strong>{user.email}</strong></p>
+      </div>
+      
       <div className="container my-4 d-flex gap-4 flex-wrap justify-content-center">
         <CardPizza 
           name="Napolitana"
