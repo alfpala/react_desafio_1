@@ -1,18 +1,16 @@
-const CardPizza = ({ name, price, ingredients, img }) => {
+export default function CardPizza({ name, price, img, ingredients }) {
   return (
-    <div className="card" style={{ width: '18rem' }}>
+    <div className="card m-2" style={{ width: "18rem" }}>
       <img src={img} className="card-img-top" alt={name} />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
-        <p><strong>Ingredientes:</strong> {ingredients.join(', ')}</p>
-        <p><strong>Precio:</strong> ${price.toLocaleString('es-CL')}</p>
-        <div className="d-flex justify-content-between">
-          <button className="btn btn-primary">Ver más</button>
-          <button className="btn btn-success">Añadir</button>
-        </div>
+        <ul>
+          {ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
+        </ul>
+        <p><strong>${price}</strong></p>
+        <button className="btn btn-primary">Añadir al carrito</button>
       </div>
     </div>
-  )
+  );
 }
 
-export default CardPizza
