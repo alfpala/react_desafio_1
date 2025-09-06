@@ -11,8 +11,11 @@ function Navbar({ setCurrentPage, user, handleLogout }) {
             <button onClick={() => setCurrentPage("login")}>Login</button>
             <button onClick={() => setCurrentPage("register")}>Registro</button>
           </>
-        ) : (   
-          <><button className="btn btn-outline-light">🛒 Carrito</button><button onClick={handleLogout}>Cerrar sesión</button></>
+        ) : (
+          <>
+            <button className="btn btn-outline-light">🛒 Carrito</button>
+            <button onClick={handleLogout}>Cerrar sesión</button>
+          </>
         )}
       </div>
     </nav>
